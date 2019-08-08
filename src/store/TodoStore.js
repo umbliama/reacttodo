@@ -20,6 +20,10 @@ class TodoStore {
     return this.todos;
   }
 
+  @computed get completedTodos() {
+    return this.todos.filter(todo => todo.isCompleted === true);
+  }
+
   addTodo(task) {
     this.todos.push({
       id: this.todos.length + 1,
@@ -32,6 +36,10 @@ class TodoStore {
     let index = this.todos.findIndex(todo => todo.id === taskId);
     this.todos.splice(index, 1);
   }
+
+  //   completeTodo() {
+  //     this.todos.
+  //   }
 }
 
 const store = new TodoStore();
