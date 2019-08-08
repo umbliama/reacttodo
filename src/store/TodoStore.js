@@ -26,9 +26,11 @@ class TodoStore {
       name: task,
       isCompleted: false
     });
-    console.log("====================================");
-    console.log("pushed");
-    console.log("====================================");
+  }
+
+  deleteTodo(taskId) {
+    let index = this.todos.findIndex(todo => todo.id === taskId);
+    this.todos.splice(index, 1);
   }
 }
 
