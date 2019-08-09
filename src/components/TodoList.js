@@ -7,27 +7,29 @@ class TodoList extends Component {
   deleteTodo = taskId => {
     this.props.store.deleteTodo(taskId);
   };
-  completedTodos = () => {
-    this.props.store.todos.map(todo => console.log(todo.id));
+  completeTodo = todo => {
+    this.props.store.completeTodo(todo);
   };
+
   render() {
     const store = this.props.store;
     return (
       <div>
         <ul>
           {store.todos.map(todo => (
-            <li
-              className={
-                todo.isCompleted ? "completed--true" : "completed--false"
-              }
-              key={todo.id}
-            >
-              {todo.name}
-              <span onClick={() => this.deleteTodo(todo.id)}>{todo.id}</span>
+            <li key={todo.id}>
+              <span
+                className={
+                  todo.isCompleted ? "completed--true" : "completed--false"
+                }
+              >
+                {todo.name}
+              </span>
+              <span onClick={() => this.deleteTodo(todo.id)}> X</span>
               <input
                 type="checkbox"
                 checked={store.completedTodos}
-                onChange={this.completedTodos}
+                onChange={() => this.completeTodo(todo)}
               />
             </li>
           ))}

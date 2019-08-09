@@ -15,7 +15,6 @@ class TodoStore {
     }
   ];
 
-  @observable filter = "";
   @computed get getTodos() {
     return this.todos;
   }
@@ -37,9 +36,9 @@ class TodoStore {
     this.todos.splice(index, 1);
   }
 
-  //   completeTodo() {
-  //     this.todos.
-  //   }
+  completeTodo(todo) {
+    todo.isCompleted = !todo.isCompleted;
+  }
 }
 
 const store = new TodoStore();
