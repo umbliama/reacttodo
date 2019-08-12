@@ -34,12 +34,16 @@ class TodoList extends Component {
                 {" "}
                 Delete
               </span>
-              <input
-                className="todos__checkbox"
-                type="checkbox"
-                checked={todo.isCompleted}
-                onChange={() => this.completeTodo(todo)}
-              />
+              <span
+                className={
+                  todo.isCompleted
+                    ? "todos__complete todos-completed--true"
+                    : "todos__complete todos-completed--false"
+                }
+                onClick={() => this.completeTodo(todo)}
+              >
+                complete this one
+              </span>
             </li>
           ))}
         </ul>
