@@ -1,8 +1,7 @@
+@import "./scss/vars";
 body {
-  background: url("./images/bg.jpg") no-repeat;
-  background-position: 100% 0;
+  background: $dark-color;
 }
-
 // UTILITY
 .btn {
   border: none;

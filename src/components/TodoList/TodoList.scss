@@ -1,20 +1,31 @@
+@import "../../scss/vars";
+@import "../../scss/media";
 .todos {
   &__list {
     list-style: none;
+    padding: 0;
+    @include sm {
+      padding: 1em;
+    }
   }
   &__item {
-    padding: 2em 0 0 0;
+    margin: 0.1em 0 0 0;
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    padding: 2em 0 0 0;
+    background: $white;
+    padding: 0.8em;
   }
   &__title {
     font-size: 32px;
     padding: 0 1em 0 0;
+    @include sm {
+      font-size: 20px;
+      width: 120px;
+    }
   }
-  &__checkbox {
-    padding: 0 1em 0 0;
+  &__complete {
+    padding: 0 0 0 1em;
   }
   &-completed--true {
     text-decoration: line-through;
