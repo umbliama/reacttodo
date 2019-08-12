@@ -1,4 +1,4 @@
-// Small devices
+@import "./vars"; // Small devices
 @mixin sm {
   @media (max-width: #{$screen-sm-min}) {
     @content;
