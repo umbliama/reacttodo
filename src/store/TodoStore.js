@@ -1,4 +1,4 @@
-import { observable } from "mobx";
+import { observable, action } from "mobx";
 import { computed } from "mobx";
 
 class TodoStore {
@@ -36,7 +36,7 @@ class TodoStore {
     this.todos.splice(index, 1);
   }
 
-  completeTodo(todo) {
+  @action completeTodo(todo) {
     todo.isCompleted = !todo.isCompleted;
   }
 }
