@@ -28,7 +28,9 @@ class AddTodo extends Component {
           onChange={this.setTask}
         />
         <button
-          className="btn btn--submit add-tood__button "
+          className={`btn btn--submit add-tood__button ${
+            !this.state.textTodo ? "btn--disabled" : ""
+          }`}
           disabled={!this.state.textTodo}
           onClick={this.addTodo}
         >
